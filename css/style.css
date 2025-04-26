@@ -1,0 +1,428 @@
+/* 공통적인 스타일 */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* header와 footer 스타일 공통화 */
+header, footer {
+    background-color: #f8f8f8;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* 로고 이미지 크기 조정 */
+header .logo img {
+    max-width: 170px; /* 최대 너비를 150px로 설정 */
+    height: auto;     /* 비율 유지 */
+}
+
+/* 검색 박스 크기 조정 */
+header .search-box {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+header .search-box input {
+    width: 500px;  /* 입력창 너비 */
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+header .search-box button {
+    background-color: #808680; /* 버튼 색상 */
+    color: white;
+    padding: 6px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+/* My Cart 버튼 크기 조정 */
+header .cart-link a {
+    font-size: 16px; /* 글씨 크기 */
+    padding: 12px 16px;
+    background-color: #4CAF50; /* 버튼 배경색 */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+header .cart-link a:hover {
+    background-color: #45a049; /* 호버 효과 */
+}
+
+/* header colour*/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(to right, #a8e6cf, #dcedc1, #d4a373); /* 연두 → 초록 → 갈색 */
+    border-bottom: 2px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 메인 콘텐츠 */
+main {
+    padding: 20px;
+    font-size: 1.3em;  /* 부모 글자 크기의 2배 */
+    text-align: center;
+}
+
+/* footer의 텍스트 스타일 */
+footer {
+    text-align: center;
+}
+
+/* 카테고리 리스트 스타일 */
+.category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category-list li {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+}
+
+.category-list li a {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #333;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.category-list li a:hover {
+    color: #fff;
+    background-color: #007bff; /* 마우스 오버 시 강조 색상 */
+    border-radius: 5px;
+}
+
+.search-results {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .product-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .product-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .product-left img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .product-left h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .product-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+  }
+  
+  .product-right p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #444;
+  }
+  
+  .add-to-cart-btn {
+    padding: 8px 16px;
+    background-color: #3cb371;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .add-to-cart-btn:hover {
+    background-color: #2e8b57;
+  }
+
+.out-of-stock {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* 기본 버튼 스타일 */
+input[type="submit"] {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* 카트가 비어있을 때의 회색 비활성화 버튼 스타일 */
+.btn-grey {
+  background-color: grey;
+  color: white;
+  cursor: not-allowed;
+}
+
+/* 활성화된 버튼 스타일 */
+input[type="submit"]:not(.btn-grey) {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+/* Cart */
+
+.cart-container {
+  position: fixed;
+  bottom: 20px;
+  right: 200px; /* 사이드바 너비(200px) + 여백(20px) */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 10px;
+  width: 300px; /* 장바구니 컨테이너의 너비 증가 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: none; /* 기본적으로 숨기기 */
+  max-height: 400px; /* 장바구니 높이 제한 */
+  overflow-y: auto; /* 내용이 넘치면 스크롤 표시 */
+}
+
+.cart-container.visible {
+    display: block; /* .visible 클래스가 추가되면 표시 */
+}
+
+.cart-header {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-align: center; /* 제목 가운데 정렬 */
+    font-weight: bold;
+    color: #333;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* 왼쪽에는 이미지와 상품명, 오른쪽에는 나머지 항목 */
+    gap: 100px;
+    border-bottom: 1px solid #333;
+    padding: 10px 0;
+}
+
+.cart-item-info {
+    display: flex;
+    align-items: center; /* 이미지와 상품명을 수평으로 정렬 */
+}
+
+.cart-item-image {
+    margin-right: 10px; /* 이미지와 이름 사이에 간격 */
+}
+
+.cart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.cart-item-name h4 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.cart-item-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cart-item-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.cart-item-actions a {
+    color: #ff0000;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+
+.cart-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+.cart-footer .total {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #333;
+}
+
+.cart-footer .order-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cart-footer .order-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.cart-footer .order-button:hover:enabled {
+    background-color: #0056b3;
+}
+
+
+.empty-cart-message {
+    text-align: center;
+    font-size: 1.5em;
+    color: #555;
+    margin-top: 100px;
+}
+
+
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4개 열로 고정 */
+    gap: 25px;
+    padding: 40px 80px;
+  }
+  
+  .category-box {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+  }
+  
+  .category-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  }
+  
+  .category-box img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  .category-box h3 {
+    margin: 15px 0;
+    font-size: 1.2rem;
+    color: #333;
+  }
+
+
+
+
+  .category-sidebar {
+    width: 200px;
+    padding: 10px;
+  }
+  .category-list > li {
+    margin-bottom: 10px;
+  }
+  .subcategory-list {
+    display: none;
+    margin-left: 10px;
+  }
+  .category-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+/* If there is no stock, the add to cart button will be shown grey*/
+
+  /* Add to Cart 버튼 기본 스타일 */
+.add-to-cart-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #28a745; /* 기본 색상 */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #218838;
+}
+
+/* 재고가 없을 경우 스타일 */
+.add-to-cart-btn.out-of-stock {
+    background-color: #ccc;  /* 회색 */
+    color: #777;  /* 어두운 회색 텍스트 */
+    cursor: not-allowed;  /* 클릭할 수 없게 */
+}
+
+.add-to-cart-btn.out-of-stock:hover {
+    background-color: #ccc;  /* 마우스 오버 시 색상 변경 안 함 */
+}
+
+
+.product-card {
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 16px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: white;
+    margin-bottom: 16px;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    background-color: #f9f9f9;
+  }
+
+
